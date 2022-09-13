@@ -1,0 +1,12 @@
+.row{
+    padding: 20px;
+background-color: #b57edc;
+}
+footer{
+    color:darkslategrey;
+    font-size: 12px;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight:bold;
+}
