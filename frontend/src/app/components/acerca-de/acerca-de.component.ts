@@ -27,7 +27,8 @@ persona: Persona = null;
 
   cargarPersona(){
     this.personaService.detail(1).subscribe(data =>
-      {this.persona =data})
+      {this.persona =data}
+    )
   }
 
 }

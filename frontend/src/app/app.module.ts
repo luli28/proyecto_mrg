@@ -15,7 +15,7 @@ import { IdiomasComponent } from './components/idiomas/idiomas.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { interceptorProvider } from './service/interceptor-service';
@@ -26,6 +26,9 @@ import { EditeducacionComponent } from './components/educacion/editeducacion.com
 import { EditSkillsComponent } from './components/skills/edit-skills.component';
 import { NewSkillsComponent } from './components/skills/new-skills.component';
 import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 
 @NgModule({
@@ -58,7 +61,9 @@ import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.com
     BrowserAnimationsModule,
     FormsModule,
     NgCircleProgressModule.forRoot({}),
-    HttpClientModule
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
 
   providers: [
