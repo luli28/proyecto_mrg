@@ -1,0 +1,15 @@
+
+package com.portfolio.mara.Repository;
+
+import com.portfolio.mara.Entity.Proyectos;
+import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface RProyectos extends JpaRepository<Proyectos, Integer>{
+    public Optional<Proyectos> findBynombreP(String nombreP);
+    public boolean existsByNombreP(String nombreP);
+    
+   
+}

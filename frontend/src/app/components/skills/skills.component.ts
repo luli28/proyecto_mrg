@@ -16,9 +16,9 @@ export class SkillsComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarSkills();
-    if(this.tokenService.getToken()){
+    if (this.tokenService.getToken()){
       this.isLogged = true;
-    } else{
+    } else {
       this.isLogged = false;
     }
   }
@@ -31,15 +31,15 @@ export class SkillsComponent implements OnInit {
     )
   }
 
-delete(id: number){
-  if(id! = undefined){
-    this.skillsS.delete(id).subscribe(
-      data => {
-        this.cargarSkills();
-      }, err => {
-        alert("No se pudo borrar skill");
-      }
-    ) 
+  delete(id?: number) {
+    if (id! = undefined) {
+      this.skillsS.delete(id).subscribe(
+        data => {
+          this.cargarSkills();
+        }, err => {
+          alert("No se pudo borrar skill");
+        }
+      )
+    }
   }
-}
 }

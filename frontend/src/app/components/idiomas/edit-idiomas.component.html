@@ -1,0 +1,22 @@
+<div class="container" ngIf="idiomas">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombre">NOMBRE DEL IDIOMA</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" 
+                    [(ngModel)]="idiomas.nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="porcentaje">Ingresar porcentaje</label>
+                    <input type="text" class="form-control" id="porcentaje" name="porcentaje" 
+                    [(ngModel)]="idiomas.porcentaje" required>
+                </div>
+                <button class="btn btn-success">
+                    ACTUALIZAR IDIOMA
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+

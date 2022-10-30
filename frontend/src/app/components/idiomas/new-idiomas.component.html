@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombre">NUEVO IDIOMA</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="porcentaje">PORCENTAJE</label>
+                    <input type="text" class="form-control" id="porcentaje" name="porcentaje" [(ngModel)]="porcentaje" required>
+                </div>
+                <button class="btn btn-success">
+                    AGREGAR IDIOMA
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+

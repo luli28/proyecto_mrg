@@ -21,8 +21,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/explab")
-@CrossOrigin(origins = {"https://frontprueba-2bc01.web.app","http://localhost:4200"})
+@RequestMapping("/expLab")
+@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "https://frontprueba-2bc01.web.app")
 public class CExperiencia {
     @Autowired
     SExperiencia sExperiencia;
@@ -35,9 +36,9 @@ public class CExperiencia {
     
  @GetMapping("/detail/{id}")
     public ResponseEntity<Experiencia> getById(@PathVariable("id") int id){
-        if(!sExperiencia.existsById(id)){
+        if(!sExperiencia.existsById(id))
             return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
-        }
+        
         Experiencia experiencia = sExperiencia.getOne(id).get();
         return new ResponseEntity(experiencia, HttpStatus.OK);
     }
@@ -45,10 +46,10 @@ public class CExperiencia {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id) {
         if (!sExperiencia.existsById(id)) {
-            return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
+            return new ResponseEntity(new Mensaje("No existe"), HttpStatus.NOT_FOUND);
         }
         sExperiencia.delete(id);
-        return new ResponseEntity(new Mensaje("producto eliminado"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Se eliminó experiencia"), HttpStatus.OK);
     }
 
     @PostMapping("/create")

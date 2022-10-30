@@ -1,10 +1,10 @@
 
 package com.portfolio.mara.Controller;
 
-import com.portfolio.mara.Dto.dtoHys;
-import com.portfolio.mara.Entity.Hys;
+import com.portfolio.mara.Dto.dtoIdiomas;
+import com.portfolio.mara.Entity.Idiomas;
 import com.portfolio.mara.Security.Controller.Mensaje;
-import com.portfolio.mara.Service.SHys;
+import com.portfolio.mara.Service.SIdiomas;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,81 +21,76 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/skills")
+@RequestMapping("/idiomas")
 @CrossOrigin(origins = "http://localhost:4200")
 //@CrossOrigin(origins = "https://frontprueba-2bc01.web.app")
 
-public class CHys {
+public class CIdiomas {
     @Autowired
-    SHys sHys;
+    SIdiomas sIdiomas;
     
     @GetMapping("/lista")
-    public ResponseEntity<List<Hys>> list(){
-        List<Hys> list = sHys.list();
+    public ResponseEntity<List<Idiomas>> list(){
+        List<Idiomas> list = sIdiomas.list();
         return new ResponseEntity(list, HttpStatus.OK);
     }
     
+    
  @GetMapping("/detail/{id}")
-    public ResponseEntity<Hys> getById(@PathVariable("id") int id){
-        if(!sHys.existsById(id))
+    public ResponseEntity<Idiomas> getById(@PathVariable("id") int id){
+        if(!sIdiomas.existsById(id))
             return new ResponseEntity(new Mensaje("No existe"), HttpStatus.NOT_FOUND);
 
-        Hys hys = sHys.getOne(id).get();
-        return new ResponseEntity(hys, HttpStatus.OK);
+        Idiomas idiomas = sIdiomas.getOne(id).get();
+        return new ResponseEntity(idiomas, HttpStatus.OK);
     }
     
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id) {
-        if (!sHys.existsById(id)) {
+        if (!sIdiomas.existsById(id)) {
             return new ResponseEntity(new Mensaje("No existe"), HttpStatus.NOT_FOUND);
         }
-        sHys.delete(id);
-        return new ResponseEntity(new Mensaje("Se eliminó skill"), HttpStatus.OK);
+        sIdiomas.delete(id);
+        return new ResponseEntity(new Mensaje("Se eliminó idioma"), HttpStatus.OK);
     }
 
    @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody dtoHys dtohys) {
-        if (StringUtils.isBlank(dtohys.getNombre())) {
+    public ResponseEntity<?> create(@RequestBody dtoIdiomas dtoidiomas) {
+        if (StringUtils.isBlank(dtoidiomas.getNombre())) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
-        if (sHys.existsByNombre(dtohys.getNombre())) {
-            return new ResponseEntity(new Mensaje("Esa skill ya existe"), HttpStatus.BAD_REQUEST);
+        if (sIdiomas.existsByNombre(dtoidiomas.getNombre())) {
+            return new ResponseEntity(new Mensaje("Ese idioma ya existe"), HttpStatus.BAD_REQUEST);
         }
 
-        Hys hys = new Hys(dtohys.getNombre(), dtohys.getPorcentaje());
-        sHys.save(hys);
+       Idiomas idiomas = new Idiomas(dtoidiomas.getNombre(), dtoidiomas.getPorcentaje());
+        sIdiomas.save(idiomas);
 
-        return new ResponseEntity(new Mensaje("Se agregó skill"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Se agregó idioma"), HttpStatus.OK);
     }
     
      @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoHys dtohys) {
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoIdiomas dtoidiomas) {
        
-        if (!sHys.existsById(id)) {
+        if (!sIdiomas.existsById(id)) {
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
         }
     
-        if (sHys.existsByNombre(dtohys.getNombre()) && sHys.getByNombre(dtohys.getNombre()).get()
+        if (sIdiomas.existsByNombre(dtoidiomas.getNombre()) && sIdiomas.getByNombre(dtoidiomas.getNombre()).get()
                 .getId() != id) {
-            return new ResponseEntity(new Mensaje("Esa skill ya existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Ese idioma ya existe"), HttpStatus.BAD_REQUEST);
         }
         
-        if (StringUtils.isBlank(dtohys.getNombre())) {
+        if (StringUtils.isBlank(dtoidiomas.getNombre())) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
 
-       Hys hys = sHys.getOne(id).get();
-        hys.setNombre(dtohys.getNombre());
-        hys.setPorcentaje(dtohys.getPorcentaje());
+       Idiomas idiomas = sIdiomas.getOne(id).get();
+        idiomas.setNombre(dtoidiomas.getNombre());
+        idiomas.setPorcentaje(dtoidiomas.getPorcentaje());
 
 
-        sHys.save(hys);
-        return new ResponseEntity(new Mensaje("Se actualizó skill"), HttpStatus.OK);
+        sIdiomas.save(idiomas);
+        return new ResponseEntity(new Mensaje("Se actualizó idiomas"), HttpStatus.OK);
     }
-    
-     
-    
 }
-
-    
-
