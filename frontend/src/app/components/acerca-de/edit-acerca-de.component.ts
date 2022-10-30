@@ -22,30 +22,30 @@ export class EditAcercaDeComponent implements OnInit {
   ngOnInit(): void {
     const id = this.activateRouter.snapshot.params['id'];
     this.personaService.detail(id).subscribe(
-      data =>{
+      data => {
         this.persona = data;
-      }, err =>{
+      }, err => {
         alert("Error a modificar");
         this.router.navigate(['']);
       }
     )
   }
-  onUpdate(): void{
-    const id= this.activateRouter.snapshot.params['id'];
+  onUpdate(): void {
+    const id = this.activateRouter.snapshot.params['id'];
     this.persona.img = this.imageService.url
     this.personaService.update(id, this.persona).subscribe(
       data => {
         this.router.navigate(['']);
-      }, err =>{
+      }, err => {
         alert("Error al modificar");
         this.router.navigate(['']);
       }
     )
   }
-uploadImage($event:any){
-  const id = this.activateRouter.snapshot.params['id'];
-  const name= "perfil_" + id;
+  uploadImage($event: any) {
+    const id = this.activateRouter.snapshot.params['id'];
+    const name = "perfil_" + id;
     this.imageService.uploadImage($event, name)
-}
+  }
 
 }
