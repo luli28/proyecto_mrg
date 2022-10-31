@@ -4,7 +4,7 @@ export class Idiomas {
     porcentaje: number;
 
     constructor(nombre:string, porcentaje: number){
-        this.nombre=nombre;
-        this.porcentaje=porcentaje;
+        this.nombre = nombre;
+        this.porcentaje = porcentaje;
     }
 }

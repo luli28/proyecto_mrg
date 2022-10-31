@@ -2,7 +2,7 @@
     <h3>PROYECTOS REALIZADOS</h3>
     <div class="col-lg-2">
         <button type="button" class="btn btn-secondary btn-sm" routerLink="/nuevoproyecto" *ngIf="isLogged">
-            Nuevo Proyecto
+            Agregar Proyecto
         </button>
     </div>
 
@@ -24,7 +24,7 @@
                     <td *ngIf="isLogged">
                         <button class="btn btn-danger" (click)="delete(Proyectos.id)">
                             <i class="bi bi-trash"></i> BORRAR</button>
-                    <td>
+            
                     </td>
                 </tr>
             </tbody>

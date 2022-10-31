@@ -8,7 +8,7 @@ import { Skills } from '../model/skills';
   providedIn: 'root'
 })
 export class SkillsService {
-  URL=environment.URL+'skills/';
+  URL = environment.URL + 'skills/';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -21,11 +21,11 @@ export class SkillsService {
   }
   
   public save(skills:Skills): Observable<any>{
-    return this.httpClient.post<any>(this.URL+ 'create', skills);
+    return this.httpClient.post<any>(this.URL + 'create', skills);
   }
   
   public update(id: number, skills: Skills): Observable<any>{
-    return this.httpClient.put<any>(this.URL +`update/${id}`,skills);
+    return this.httpClient.put<any>(this.URL + `update/${id}`, skills);
   }
 
   public delete(id: number): Observable<any>{

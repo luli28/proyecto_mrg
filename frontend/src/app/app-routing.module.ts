@@ -16,19 +16,19 @@ import { NewSkillsComponent } from './components/skills/new-skills.component';
 
 
 const routes: Routes = [
-  {path: '',component:HomeComponent},
-  {path: 'login',component:LoginComponent},
-  {path: 'nuevaexp', component: NewExperienciaComponent},
-  {path: 'editarexp/:id', component: EditExperienciaComponent},
-  {path: 'nuevaedu', component: NeweducacionComponent},
-  {path: 'editaredu/:id', component: EditeducacionComponent},
-  {path: 'nuevaskill', component: NewSkillsComponent},
-  {path: 'editarskill/:id', component: EditSkillsComponent},
-  {path: 'editaracercade/:id', component: EditAcercaDeComponent},
-  {path: 'editarproy/:id', component: EditproyectosComponent},
-  {path: 'nuevoproy', component: NewProyectosComponent},
-  {path: 'editaridiomas/:id', component: EditIdiomasComponent},
-  {path: 'nuevoidiomas', component: NewIdiomasComponent}
+  {path: '', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'newexp', component: NewExperienciaComponent},
+  {path: 'editexp/:id', component: EditExperienciaComponent},
+  {path: 'newedu', component: NeweducacionComponent},
+  {path: 'editedu/:id', component: EditeducacionComponent},
+  {path: 'newskill', component: NewSkillsComponent},
+  {path: 'editskill/:id', component: EditSkillsComponent},
+  {path: 'editacercade/:id', component: EditAcercaDeComponent},
+  {path: 'editproy/:id', component: EditproyectosComponent},
+  {path: 'newproy', component: NewProyectosComponent},
+  {path: 'editidiomas/:id', component: EditIdiomasComponent},
+  {path: 'newidiomas', component: NewIdiomasComponent}
 ];
 
 @NgModule({

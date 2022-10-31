@@ -8,29 +8,27 @@ import { Idiomas } from '../model/idiomas';
   providedIn: 'root'
 })
 export class IdiomasService {
-  URL=environment.URL+'idiomas/';
-  
+  URL = environment.URL + 'idiomas/';
+
   constructor(private httpClient: HttpClient) { }
 
-  public lista(): Observable <Idiomas[]>{
+  public lista(): Observable<Idiomas[]> {
     return this.httpClient.get<Idiomas[]>(this.URL + 'lista');
-  } 
+  }
 
-  public detail(id: number): Observable<Idiomas>{
+  public detail(id: number): Observable<Idiomas> {
     return this.httpClient.get<Idiomas>(this.URL + `detail/${id}`);
   }
-  
-  public save(idiomas:Idiomas): Observable<any>{
-    return this.httpClient.post<any>(this.URL+ 'create', idiomas);
-  }
-  
-  public update(id: number, idiomas: Idiomas): Observable<any>{
-    return this.httpClient.put<any>(this.URL +`update/${id}`,idiomas);
+
+  public save(idiomas: Idiomas): Observable<any> {
+    return this.httpClient.post<any>(this.URL + 'create', idiomas);
   }
 
-  public delete(id: number): Observable<any>{
+  public update(id: number, idiomas: Idiomas): Observable<any> {
+    return this.httpClient.put<any>(this.URL + `update/${id}`, idiomas);
+  }
+
+  public delete(id: number): Observable<any> {
     return this.httpClient.delete(this.URL + `delete/${id}`);
   }
-
-
 }
