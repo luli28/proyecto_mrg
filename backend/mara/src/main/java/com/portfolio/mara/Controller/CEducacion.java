@@ -44,13 +44,13 @@ public class CEducacion {
         return new ResponseEntity(educacion, HttpStatus.OK);
     }
     
-    @DeleteMapping("/delete/(id)")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete (@PathVariable("id") int id){
         if(!sEducacion.existsById(id)){
-            return new ResponseEntity (new Mensaje ("No existe"), HttpStatus.NOT_FOUND);
+            return new ResponseEntity(new Mensaje ("No existe"), HttpStatus.NOT_FOUND);
         }
         sEducacion.delete(id);
-        return new ResponseEntity (new Mensaje ("Se eliminó educación"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje ("Se eliminó educación"), HttpStatus.OK);
     }
     
     @PostMapping("/create")

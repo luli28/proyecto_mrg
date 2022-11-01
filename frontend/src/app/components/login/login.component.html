@@ -8,21 +8,20 @@
               <div class="card-body p-md-5 mx-md-4">
 
                 <div class="text-center">
-                  <img src="../../../assets/cv.png"
-                    style="width: 100px;" alt="logo">
+                  <img src="../../../assets/cv.png" style="width: 100px;" alt="logo">
                   <h4 class="mt-1 mb-5 pb-1">Mi Portfolio</h4>
                 </div>
-                   
-                <form #f="ngForm" (ngSubmit)="onLogin()"noValidate>      
+
+                <form #f="ngForm" (ngSubmit)="onLogin()" noValidate>
                   <div class="form-outline mb-4">
                     <input type="email" id="nombreUsuario" name="nombreUsuario" class="form-control"
-                    placeholder="Ingresá tu mail"  [(ngModel)]="nombreUsuario"required/>
-                   <label class="form-label" for="nombreUsuario"></label>
+                      placeholder="Ingresá tu mail" [(ngModel)]="nombreUsuario" name="nombreUsuario" required />
+                    <label class="form-label" for="nombreUsuario"></label>
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input type="password" id="password" name= "password" class="form-control" 
-                    placeholder="Ingresá tu contraseña" [(ngModel)]="password"required/>
+                    <input type="password" id="password" name="password" class="form-control"
+                      placeholder="Ingresá tu contraseña" [(ngModel)]="password" name="password" required />
                     <label class="form-label" for="password"></label>
                   </div>
 
@@ -44,7 +43,12 @@
               <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                 <h2 class="text-center mb-4">BIENVENIDO A TU PORTFOLIO</h2>
                 <h4 class="text-center mb-0">Por favor, ingresá a tu cuenta</h4>
-                
+
               </div>
             </div>
-
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
