@@ -21,6 +21,7 @@ export class SkillsComponent implements OnInit {
     } else {
       this.isLogged = false;
     }
+     console.log(this.skills)
   }
 
   cargarSkills(): void {
@@ -29,6 +30,7 @@ export class SkillsComponent implements OnInit {
         this.skills = data;
       }
     )
+ 
   }
 
   delete(id?: number) {

@@ -20,7 +20,6 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { interceptorProvider } from './service/interceptor-service';
 import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
-import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
 import { NeweducacionComponent } from './components/educacion/neweducacion.component';
 import { EditeducacionComponent } from './components/educacion/editeducacion.component';
 import { EditSkillsComponent } from './components/skills/edit-skills.component';
@@ -33,6 +32,9 @@ import { EditproyectosComponent } from './components/proyectos/editproyectos.com
 import { NewProyectosComponent } from './components/proyectos/new-proyectos.component';
 import { NewIdiomasComponent } from './components/idiomas/new-idiomas.component';
 import { EditIdiomasComponent } from './components/idiomas/edit-idiomas.component';
+import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
+
+
 
 
 @NgModule({
@@ -51,7 +53,6 @@ import { EditIdiomasComponent } from './components/idiomas/edit-idiomas.componen
     LoginComponent,
     HomeComponent,
     NewExperienciaComponent,
-    EditExperienciaComponent,
     NeweducacionComponent,
     EditeducacionComponent,
     EditSkillsComponent,
@@ -61,6 +62,7 @@ import { EditIdiomasComponent } from './components/idiomas/edit-idiomas.componen
     NewProyectosComponent,
     NewIdiomasComponent,
     EditIdiomasComponent,
+   EditExperienciaComponent,
    
   ],
   imports: [
