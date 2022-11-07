@@ -11,7 +11,10 @@ import { TokenService } from 'src/app/service/token.service';
 export class IdiomasComponent implements OnInit {
   idiomas: Idiomas[] = [];
 
-  constructor(private idiomasS: IdiomasService, private tokenService: TokenService) { }
+  constructor(
+    private idiomasS: IdiomasService, 
+    private tokenService: TokenService) { }
+
   isLogged = false;
 
   ngOnInit(): void {
@@ -31,16 +34,16 @@ export class IdiomasComponent implements OnInit {
     )
   }
 
-  delete(id?: number) {
-    if (id! = undefined) {
+  delete (id?: number){
+    if(id!= undefined){
       this.idiomasS.delete(id).subscribe(
-        data => {
+        data =>{
           this.cargarIdiomas();
-        }, err => {
-          alert("No se pudo borrar idioma");
+        }, err =>{
+          alert("No se pudo eliminar Idioma");
         }
       )
     }
-  }
+  }  
 
 }

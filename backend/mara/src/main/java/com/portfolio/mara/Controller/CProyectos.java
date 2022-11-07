@@ -43,7 +43,7 @@ public class CProyectos {
         return new ResponseEntity(proyectos, HttpStatus.OK);
     }
     
-    @DeleteMapping("/delete/(id)")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete (@PathVariable("id") int id){
         if(!sProyectos.existsById(id)){
             return new ResponseEntity (new Mensaje ("No existe"), HttpStatus.NOT_FOUND);

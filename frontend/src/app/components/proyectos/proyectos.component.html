@@ -1,26 +1,26 @@
 <div class="row">
     <h3>PROYECTOS REALIZADOS</h3>
     <div class="col-lg-2">
-        <button type="button" class="btn btn-secondary btn-sm" routerLink="/newproy" *ngIf="isLogged">
+        <button type="button" class="btn btn-secondary btn-sm" routerLink="/newproyectos" *ngIf="isLogged">
             Agregar Proyecto
         </button>
     </div>
-
+    
     <div class="col lg 1"></div>
     <div class="col-xs-9 col-sm-9 col-md-9 col-lg-11">
 
         <table class="table">
             <tbody>
-                <tr *ngFor="let Proyectos of proy">
+                <tr *ngFor="let Proyectos of proyectos">
                     <td>
                         <h6>{{Proyectos.nombreP}}</h6>
                     </td>
                     <td>{{Proyectos.descripcionP}}</td>
                     <td *ngIf="isLogged">
-                        <button class="btn btn-light" routerLink="/editproy/{{Proyectos.id}}">
+                        <button class="btn btn-light" routerLink="/editproyectos/{{Proyectos.id}}">
                         <i class="bi bi-pencil"></i> EDITAR</button>
                     </td>
-
+                 
                     <td *ngIf="isLogged">
                         <button class="btn btn-danger" (click)="delete(Proyectos.id)">
                         <i class="bi bi-trash"></i> BORRAR</button>

@@ -22,7 +22,6 @@ import { interceptorProvider } from './service/interceptor-service';
 import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
 import { NeweducacionComponent } from './components/educacion/neweducacion.component';
 import { EditeducacionComponent } from './components/educacion/editeducacion.component';
-import { EditSkillsComponent } from './components/skills/edit-skills.component';
 import { NewSkillsComponent } from './components/skills/new-skills.component';
 import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -32,7 +31,10 @@ import { EditproyectosComponent } from './components/proyectos/editproyectos.com
 import { NewProyectosComponent } from './components/proyectos/new-proyectos.component';
 import { NewIdiomasComponent } from './components/idiomas/new-idiomas.component';
 import { EditIdiomasComponent } from './components/idiomas/edit-idiomas.component';
+import { EditSkillsComponent } from './components/skills/edit-skills.component';
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
+
+
 
 
 
@@ -55,14 +57,16 @@ import { EditExperienciaComponent } from './components/experiencia/edit-experien
     NewExperienciaComponent,
     NeweducacionComponent,
     EditeducacionComponent,
-    EditSkillsComponent,
     NewSkillsComponent,
     EditAcercaDeComponent,
     EditproyectosComponent,
     NewProyectosComponent,
     NewIdiomasComponent,
     EditIdiomasComponent,
-   EditExperienciaComponent,
+    EditSkillsComponent,
+    EditExperienciaComponent,
+
+
    
   ],
   imports: [
