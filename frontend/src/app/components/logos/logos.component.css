@@ -28,13 +28,14 @@ img{
     .container{
         flex-direction: column;
     }
-.redes{
+    .redes{
     display: flex;
     justify-content: space-between;
     align-items: center;
-}    
-.redes img{
-    margin: 0.5em; 
-}
+    }    
+
+    .redes img{
+        margin: 0.5em; 
+    }
 
 }

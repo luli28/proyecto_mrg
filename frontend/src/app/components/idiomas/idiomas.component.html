@@ -23,12 +23,12 @@
 
         <div>
             <td *ngIf="isLogged">
-                <button class="btn btn-light" routerLink="/editidiomas/{{Idioma.id}}">
+                <button class="btn btn-outline-success" routerLink="/editidiomas/{{Idioma.id}}">
                     <i class="bi bi-pencil"></i> EDITAR</button>
             </td>
 
             <td *ngIf="isLogged">
-                <button class="btn btn-danger" (click)="delete(Idioma.id)">
+                <button class="btn btn-outline-danger" (click)="delete(Idioma.id)">
                     <i class="bi bi-trash"></i> BORRAR</button>
             </td>
         </div>

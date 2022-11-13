@@ -14,13 +14,13 @@
 
         <div>
             <td *ngIf="isLogged">
-                <button class="btn btn-light" routerLink="/editskills/{{Skill.id}}">
+                <button class="btn btn-outline-success" routerLink="/editskills/{{Skill.id}}">
                     <i class="bi bi-pencil"></i> EDITAR
                 </button>
             </td>
 
             <td *ngIf="isLogged">
-                <button class="btn btn-danger" (click)="delete(Skill.id)">
+                <button class="btn btn-outline-danger" (click)="delete(Skill.id)">
                 <i class="bi bi-trash"></i> BORRAR</button>
             </td>
         </div>

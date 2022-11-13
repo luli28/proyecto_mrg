@@ -7,11 +7,11 @@
 @media (min-width: 576px){
     #fotoperfil{
         position: absolute;
-        width: 20%;
-        border-radius: 100%;
+        width: 15%;
+        border-radius: 50%;
         box-shadow: 3px 3px 3px grey;
-        top: 360px;
-        left: 1%;
+        top: 400px;
+        left: 3%;
     }
     .descripcion{
         display: flex;
@@ -22,8 +22,8 @@
 @media (max-width: 575px){
     #fotoperfil{
         position: absolute;
-        width: 50%;
-        border-radius: 100%;
+        width: 15%;
+        border-radius: 50%;
         box-shadow: 3px 3px 3px grey;
         top: 250px;
         left: 25%;
@@ -31,7 +31,7 @@
 }
 
 #nombre{
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     margin-top: 0,1%;
     
